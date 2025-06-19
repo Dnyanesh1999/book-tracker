@@ -34,6 +34,10 @@ const Cart = () => {
     dispatch({ type: "REMOVE_FROM_CART", payload: book });
   };
 
+  const handleClearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
+  };
+
   return (
     <Box alignItems="center" sx={{ p: 4 }}>
       <Typography
@@ -149,8 +153,11 @@ const Cart = () => {
               <Typography variant="body1" mb={2}>
                 Subtotal: <strong>₹{subtotal}</strong>
               </Typography>
-              <Button variant="contained" color="primary" fullWidth>
+              <Button variant="contained" color="primary" fullWidth sx={{ mb: 2 }}>
                 Proceed to Checkout
+              </Button>
+              <Button variant="outlined" color="error" fullWidth onClick={handleClearCart}>
+                Clear Cart
               </Button>
             </Paper>
           </Grid>

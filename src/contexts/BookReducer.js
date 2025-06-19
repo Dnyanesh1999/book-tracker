@@ -40,6 +40,14 @@ export const BookReducer = (state, action) => {
         error: null,
       };
 
+    case "CLEAR_CART":
+      return {
+        ...state,
+        cart: [],
+        loading: false,
+        error: null,
+      };
+
     case "TOGGLE_FAVORITE": {
       const exists = state.favorites.find(
         (book) => book.key === action.payload.key

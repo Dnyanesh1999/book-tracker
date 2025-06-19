@@ -25,7 +25,6 @@ const BookCard = ({ book }) => {
 
   const isInCart = state.cart.some((item) => item.key === book.key);
 
-  console.log("cart:", state.cart);
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMsg, setSnackbarMsg] = useState("");
